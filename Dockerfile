@@ -11,4 +11,5 @@ COPY wrapper.sh /opt/kallisto/
 RUN mkdir /data && chmod a+wrx /data
 WORKDIR /data
 
+USER root
 ENTRYPOINT ["sh", "/opt/kallisto/wrapper.sh"]
