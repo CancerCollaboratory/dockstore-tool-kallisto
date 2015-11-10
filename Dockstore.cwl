@@ -25,42 +25,43 @@ inputs:
 # common parameters
 
   - id: "#mode"
-    type: String
     inputBinding:
       position: 1 
-    type: enum
-      name: "Mode"
+    type: 
+      type: enum
+      name: "mode"
       symbols: ["index","quant"]
 
-  - id: "#index"
-    type: File
+  - id: "#index_name"
+    type: string 
     inputBinding:
       position: 2 
       prefix: "-i"
+
+  - id: "#fasta"
+    type: File 
+    inputBinding:
+      position: 3 
+
 
 # parameters for kallisto index specifically
 
   - id: "#kmer-size"
     type: ["null",int]
     inputBinding:
-      position: 3 
+      position: 4 
       prefix: "-k"
 
 
 # parameters for kallisto quant specifically
 
-  - id: "#output-dir"
-    type: string 
-    inputBinding:
-      position: 2
-      prefix: "-k"
-
 outputs:
-  - id: "#output"
+  - id: "#index"
     type: File
     outputBinding:
       glob:
         engine: cwl:JsonPointer
+        script: /job/index_name
 
 baseCommand: []
 

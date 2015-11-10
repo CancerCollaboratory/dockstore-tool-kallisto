@@ -1,0 +1,12 @@
+{
+    "mode": index,
+    "index": {
+        "class": "File",
+        "path": "index.out"
+    },
+    "index_name" : "index.out",
+    "fasta": {
+        "class": "File",
+        "path": "hg19.fa"
+    }
+}
