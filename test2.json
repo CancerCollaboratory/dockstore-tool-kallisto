@@ -1,7 +1,12 @@
 {
-    "index": {
+    "mode": quant,
+    "fasta": {
         "class": "File",
         "path": "hg19.fa"
     },
-    "mode": "quant"
+    "quant_output_name": "output.dir",
+    "output": {
+        "class": "File",
+        "path": "output.dir/abundances.h5"
+    }
 }

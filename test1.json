@@ -1,6 +1,6 @@
 {
     "mode": index,
-    "index": {
+    "output": {
         "class": "File",
         "path": "index.out"
     },

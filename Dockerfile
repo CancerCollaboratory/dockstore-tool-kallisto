@@ -8,7 +8,7 @@ RUN tar -xvzf kallisto_linux-v${version}.tar.gz
 RUN cp kallisto_linux-v${version}/kallisto /usr/local/bin/
 COPY wrapper.sh /opt/kallisto/
 
-RUN mkdir /data
+RUN mkdir /data && chmod a+wrx /data
 WORKDIR /data
 
 ENTRYPOINT ["sh", "/opt/kallisto/wrapper.sh"]
