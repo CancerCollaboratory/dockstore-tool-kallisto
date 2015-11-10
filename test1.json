@@ -1,10 +1,9 @@
 {
     "mode": index,
-    "output": {
-        "class": "File",
-        "path": "index.out"
-    },
     "index_name" : "index.out",
+    "output_files" : [
+      "index.out"
+    ],
     "fasta": {
         "class": "File",
         "path": "hg19.fa"

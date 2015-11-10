@@ -33,35 +33,59 @@ inputs:
       symbols: ["index","quant"]
 
   - id: "#index_name"
-    type: string 
+    type: ["null",string] 
     inputBinding:
       position: 2 
       prefix: "-i"
 
-  - id: "#fasta"
-    type: File 
-    inputBinding:
-      position: 3 
-
+  - id: "#output_files"
+    type:  
+      - type: array
+        items: string 
 
 # parameters for kallisto index specifically
 
   - id: "#kmer-size"
     type: ["null",int]
     inputBinding:
-      position: 4 
+      position: 10 
       prefix: "-k"
 
+  - id: "#fasta"
+    type: ["null",File] 
+    inputBinding:
+      position: 20  
 
 # parameters for kallisto quant specifically
 
+  - id: "#quant_output_name"
+    type: ["null",string] 
+    inputBinding:
+      position: 50 
+      prefix: "-o"
+
+  - id: "#index_input"
+    type: ["null",File] 
+    inputBinding:
+      position: 20  
+      prefix: "-i"
+
+  - id: "#fastq"
+    type:  
+      - "null"
+      - type: array
+        items: File
+    inputBinding:
+      position: 60  
+
+
 outputs:
-  - id: "#index"
+  - id: "#output"
     type: File
     outputBinding:
       glob:
         engine: cwl:JsonPointer
-        script: /job/index_name
+        script: /job/output_files
 
 baseCommand: []
 

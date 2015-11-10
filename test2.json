@@ -1,12 +1,23 @@
 {
     "mode": quant,
-    "fasta": {
+    "index_input": {
         "class": "File",
-        "path": "hg19.fa"
+        "path": "index.out"
     },
-    "quant_output_name": "output.dir",
-    "output": {
+    "fastq": [
+    {
         "class": "File",
-        "path": "output.dir/abundances.h5"
+        "path": "test1.fastq"
+    },
+    {
+        "class": "File",
+        "path": "test2.fastq"
     }
+    ],
+    "quant_output_name": "output-dir",
+    "output_files" : [
+      "output-dir/abundances.h5",
+      "output-dir/abundances.tsv",
+      "output-dir/run_info.json"
+    ]
 }
