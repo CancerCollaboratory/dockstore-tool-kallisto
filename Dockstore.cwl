@@ -11,14 +11,10 @@ dct:creator:
   foaf:mbox: "mailto:help@cancercollaboratory.org"
 
 requirements:
-  - class: ExpressionEngineRequirement
-    id: "#node-engine"
-    requirements:
-    - class: DockerRequirement
-      dockerPull: commonworkflowlanguage/nodejs-engine
-    engineCommand: cwlNodeEngine.js
   - class: DockerRequirement
     dockerPull: quay.io/collaboratory/dockstore-tool-kallisto
+
+cwlVersion: draft-3
 
 inputs:
 
@@ -83,9 +79,7 @@ outputs:
   - id: "#output"
     type: File
     outputBinding:
-      glob:
-        engine: cwl:JsonPointer
-        script: /job/output_files
+      glob: $(inputs.output_files)
 
 baseCommand: []
 
