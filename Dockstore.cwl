@@ -8,7 +8,7 @@ dct:creator:
   foaf:mbox: mailto:help@cancercollaboratory.org
 requirements:
 - class: DockerRequirement
-  dockerPull: quay.io/collaboratory/dockstore-tool-kallisto
+  dockerPull: quay.io/collaboratory/dockstore-tool-kallisto:1.0
 
 cwlVersion: v1.0
 
